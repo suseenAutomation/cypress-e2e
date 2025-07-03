@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "target": "ES6",
+    "jsx": "react",
+    "lib": ["es6", "dom", "dom.iterable","ES2021"],
+    "types": ["cypress"],
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+"include": [
+  "**/*.ts",
+  "**/*.js",
+  "webpack.config.js"
+],
+    "exclude": [
+        "node_modules",
+        "cypress/videos",
+        "cypress/screenshots"
+    ]
+
+}

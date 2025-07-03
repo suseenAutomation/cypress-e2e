@@ -1,0 +1,32 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "A project for testing the books page using Cypress.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run --browser chrome",
+    "apijson": "mkdir cypress/temp; echo '{}' > cypress/temp/api-variables.json;",
+    "prereport": " npm run delete:reports; npm run apijson",
+    "delete:reports": "rm -rf cypress/reports/* || true; rm -rf cypress/screenshots/* || true; rm -rf cypress/videos/* || true",
+    "postreport": "npm run combine:reports",
+    "combine:reports": "jrm cypress/reports/combine-reports.xml \"cypress/reports/*.xml\"",
+    "test:e2e:report": "npm run prereport && npm run test:headless && npm run postreport",
+    "move:reports": "mkdir cypress/reports/e2e; mv cypress/reports/combine-reports.xml cypress/reports/e2e"
+  },
+  "dependencies": {
+    "cypress": "^12.0.0"
+  },
+  "devDependencies": {
+    "cypress-grep": "^3.0.4",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-multi-reporters": "^2.0.5",
+    "junit-report-merger": "^7.0.1",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9"
+  },
+  "author": "suseen",
+  "license": "ISC"
+}
