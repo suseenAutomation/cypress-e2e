@@ -1,0 +1,7 @@
+{
+"username": "#userName",
+"password": "#password",
+"loginButton": "#login",
+"logoutButton": "#submit",
+"loginError":"#name"
+}
